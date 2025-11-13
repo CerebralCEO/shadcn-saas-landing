@@ -1,7 +1,6 @@
 import { Icons } from '@/components/icons/icons';
 import { Section } from '@/components/section';
 import { Button } from '@/components/ui/button';
-import { env } from '@/env';
 import Link from 'next/link';
 import type React from 'react';
 
@@ -21,7 +20,7 @@ export default function CTA(): React.ReactElement {
           </p>
           <div className='flex flex-row gap-3'>
             <Button size='lg' className='group gap-4' asChild>
-              <Link href={env.NEXT_PUBLIC_APP_URL}>
+              <Link href='#'>
                 Get started for free{' '}
                 <Icons.arrowUpRight className='group-hover:-rotate-12 size-4 transition-transform' />
               </Link>
@@ -32,7 +31,7 @@ export default function CTA(): React.ReactElement {
               variant='outline'
               asChild
             >
-              <Link href='/pricing'>
+              <Link href='#'>
                 <Icons.pricing className='group-hover:-rotate-12 size-4 transition-transform' />
                 See pricing{' '}
               </Link>

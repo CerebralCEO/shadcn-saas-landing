@@ -1,15 +1,13 @@
 import { Icons } from '@/components/icons/icons';
 import { Section } from '@/components/section';
 import { Button } from '@/components/ui/button';
-import { env } from '@/env';
-import type { Page } from '@/lib/source';
 import { MailIcon } from 'lucide-react';
 import * as motion from 'motion/react-client';
 import Image from 'next/image';
 import Link from 'next/link';
 import heroImage from '../../../../public/images/gradient-noise-purple-azure-light.png';
 
-const Hero = ({ posts }: { posts: Page[] }) => (
+const Hero = () => (
   <Section className='relative w-full overflow-hidden bg-dashed px-4 py-16 sm:px-16 sm:py-24 md:py-32'>
     <motion.div
       initial={{ opacity: 0 }}
@@ -38,7 +36,7 @@ const Hero = ({ posts }: { posts: Page[] }) => (
         className='group gap-4 bg-muted/70'
         asChild
       >
-        <Link href={`/blog/${posts?.[0]?.slugs?.join('/')}`}>
+        <Link href={`#`}>
           Read our latest announcement
           <Icons.arrowUpRight className='group-hover:-rotate-12 size-4 transition-transform' />
         </Link>
@@ -62,13 +60,13 @@ const Hero = ({ posts }: { posts: Page[] }) => (
           variant='outline'
           asChild
         >
-          <Link href='/contact'>
+          <Link href='#'>
             Get in touch{' '}
             <MailIcon className='group-hover:-rotate-12 size-4 transition-transform' />
           </Link>
         </Button>
         <Button size='lg' className='group gap-4' asChild>
-          <Link href={env.NEXT_PUBLIC_APP_URL}>
+          <Link href='#'>
             Sign up{' '}
             <Icons.arrowUpRight className='group-hover:-rotate-12 size-4 transition-transform' />
           </Link>

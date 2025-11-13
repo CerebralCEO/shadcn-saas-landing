@@ -3,11 +3,10 @@ import type { Viewport } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import type { ReactNode } from 'react';
 import '@/styles/globals.css';
-import 'katex/dist/katex.css';
 import { baseUrl } from '@/lib/constants';
 import { Body } from './layout.client';
-import { description as homeDescription } from './layout.config';
 import { Provider } from './provider';
+import { siteConfig } from '@/lib/config';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -21,10 +20,10 @@ const geistMono = Geist_Mono({
 
 export const metadata = createMetadata({
   title: {
-    template: '%s | SaasCN',
-    default: 'SaasCN',
+    template: `%s | ${siteConfig.name}`,
+    default: siteConfig.name,
   },
-  description: homeDescription,
+  description: siteConfig.description,
   metadataBase: baseUrl,
 });
 
